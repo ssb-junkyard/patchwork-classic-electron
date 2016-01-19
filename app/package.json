@@ -1,0 +1,13 @@
+{
+  "name": "ssb-patchwork-electron",
+  "productName": "Patchwork",
+  "identifier": "com.ssbc.patchwork",
+  "description": "p2p social sharing",
+  "author": "Paul Frazee <pfrazee@gmail.com>",
+  "copyright": "© 2016, Secure Scuttlebutt Consortium",
+  "license": "?",
+  "main": "index.js",
+  "dependencies": {
+    "ssb-patchwork": "2.0.6"
+  }
+}

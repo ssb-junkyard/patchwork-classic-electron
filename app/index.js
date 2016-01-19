@@ -1,0 +1,1 @@
+require('ssb-patchwork')
