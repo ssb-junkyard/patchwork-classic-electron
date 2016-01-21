@@ -12,15 +12,13 @@ npm install
 npm start
 ```
 
-Until https://github.com/ssbc/patchwork/pull/230 is merged, you'll also need to do this:
+To use the latest patchwork version, do the following:
 
 ```
 cd ~
 git clone https://github.com/ssbc/patchwork.git
 cd patchwork
-git checkout hosted
 npm install
-npm run build
 npm link
 cd ~/patchwork-electron/app
 npm link ssb-patchwork

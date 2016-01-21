@@ -8,6 +8,6 @@
   "license": "?",
   "main": "index.js",
   "dependencies": {
-    "ssb-patchwork": "2.0.6"
+    "ssb-patchwork": "2.1.0"
   }
 }
