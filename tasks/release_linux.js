@@ -54,7 +54,8 @@ var finalize = function () {
     packDir.write('usr/share/applications/' + manifest.name + '.desktop', desktop);
 
     // Copy icon
-    projectDir.copy('resources/icon.png', readyAppDir.path('icon.png'));
+    projectDir.copy('app/node_modules/ssb-patchwork/ui/img/icon.png',
+        readyAppDir.path('icon.png'));
 
     return Q();
 };

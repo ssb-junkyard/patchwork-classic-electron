@@ -5,9 +5,10 @@
   "description": "p2p social sharing",
   "author": "Paul Frazee <pfrazee@gmail.com>",
   "copyright": "© 2016, Secure Scuttlebutt Consortium",
-  "license": "?",
+  "license": "GPL-3.0",
   "main": "index.js",
+  "version": "2.2.0",
   "dependencies": {
-    "ssb-patchwork": "2.1.0"
+    "ssb-patchwork": "2.2.0"
   }
 }
