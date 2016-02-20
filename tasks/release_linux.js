@@ -68,6 +68,28 @@ var renameApp = function () {
     return readyAppDir.renameAsync("electron", manifest.name);
 };
 
+var packToArchive = function () {
+    var deferred = Q.defer();
+    var archiveFileName = packName + '_amd64.tar.gz';
+    var archivePath = releasesDir.path(archiveFileName);
+    var appContainerDir = packDir.cwd('opt');
+
+    // Archive the package
+    childProcess.execFile('tar', ['czf', archivePath, '-C', appContainerDir.path(), '.'],
+        function (error, stdout, stderr) {
+            if (error || stderr) {
+                console.log('ERROR while archiving package:');
+                console.log(error);
+                console.log(stderr);
+            } else {
+                gulpUtil.log('Archive ready', archivePath);
+            }
+            deferred.resolve();
+        });
+
+    return deferred.promise;
+}
+
 var packToDebFile = function () {
     var deferred = Q.defer();
 
@@ -116,6 +138,7 @@ module.exports = function () {
     .then(packageApp)
     .then(finalize)
     .then(renameApp)
+    .then(packToArchive)
     .then(packToDebFile)
     .then(cleanClutter)
     .catch(console.error);
