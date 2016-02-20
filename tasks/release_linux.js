@@ -32,7 +32,12 @@ var init = function () {
 };
 
 var copyRuntime = function () {
-    return projectDir.copyAsync('node_modules/electron-prebuilt/dist', readyAppDir.path(), { overwrite: true });
+    projectDir.copy('node_modules/electron-prebuilt/dist', readyAppDir.path(), { overwrite: true });
+
+    // Add Patchwork's license next to the other licenses
+    readyAppDir.rename('LICENSE', 'LICENSE-Electron');
+    return projectDir.copyAsync('app/node_modules/ssb-patchwork/LICENSE',
+        readyAppDir.path('LICENSE-Patchwork'));
 };
 
 var cleanupRuntime = function () {
