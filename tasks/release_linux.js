@@ -6,6 +6,9 @@ var childProcess = require('child_process');
 var jetpack = require('fs-jetpack');
 var asar = require('asar');
 var utils = require('./utils');
+var mktemp = require('mktemp');
+var path = require('path');
+var os = require('os');
 
 var projectDir;
 var releasesDir;
@@ -17,7 +20,8 @@ var manifest;
 
 var init = function () {
     projectDir = jetpack;
-    tmpDir = projectDir.dir('./tmp', { empty: true });
+    var tmpDirTemplate = path.join(os.tmpdir(), 'package-XXXXXXXX');
+    tmpDir = jetpack.cwd(mktemp.createDirSync(tmpDirTemplate));
     releasesDir = projectDir.dir('./releases');
     manifest = projectDir.read('app/package.json', 'json');
     packName = manifest.name + '_' + manifest.version;
