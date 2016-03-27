@@ -7,8 +7,8 @@
   "copyright": "© 2016, Secure Scuttlebutt Consortium",
   "license": "GPL-3.0",
   "main": "index.js",
-  "version": "2.6.4",
+  "version": "2.7.0",
   "dependencies": {
-    "ssb-patchwork": "2.6.4"
+    "ssb-patchwork": "2.7.0"
   }
 }
