@@ -17,6 +17,7 @@ var packDir;
 var tmpDir;
 var readyAppDir;
 var manifest;
+var debArch = {x64: 'amd64', ia32: 'i386', arm: 'armhf'}[os.arch()] || os.arch();
 
 var init = function () {
     projectDir = jetpack;
@@ -79,7 +80,7 @@ var renameApp = function () {
 
 var packToArchive = function () {
     var deferred = Q.defer();
-    var archiveFileName = packName + '_amd64.tar.gz';
+    var archiveFileName = packName + '_' + debArch + '.tar.gz';
     var archivePath = releasesDir.path(archiveFileName);
     var appContainerDir = packDir.cwd('opt');
 
@@ -102,7 +103,7 @@ var packToArchive = function () {
 var packToDebFile = function () {
     var deferred = Q.defer();
 
-    var debFileName = packName + '_amd64.deb';
+    var debFileName = packName + '_' + debArch + '.deb';
     var debPath = releasesDir.path(debFileName);
 
     gulpUtil.log('Creating DEB package...');
