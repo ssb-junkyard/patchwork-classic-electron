@@ -118,6 +118,7 @@ var packToDebFile = function () {
         description: manifest.description,
         version: manifest.version,
         author: manifest.author,
+        arch: debArch,
         size: appSize
     });
     packDir.write('DEBIAN/control', control);
