@@ -23,5 +23,6 @@
   },
   "dependencies": {
     "mktemp": "^0.4.0"
-  }
+  },
+  "version": "2.10.2"
 }
