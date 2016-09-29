@@ -9,6 +9,6 @@
   "main": "index.js",
   "version": "2.10.0",
   "dependencies": {
-    "ssb-patchwork": "2.10.0"
+    "ssb-patchwork": "2.10.2"
   }
 }
