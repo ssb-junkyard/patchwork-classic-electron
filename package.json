@@ -17,7 +17,7 @@
     "rcedit": "^0.3.0"
   },
   "scripts": {
-    "postinstall": "cd app && npm install",
+    "postinstall": "cd app && npm install && cd .. && npm run rebuild",
     "rebuild": "cd app && npm rebuild --runtime=electron --target=1.4.2 --abi=50 --disturl=https://atom.io/download/atom-shell",
     "release": "gulp release --env=production",
     "start": "node ./tasks/start",
@@ -26,5 +26,5 @@
   "dependencies": {
     "mktemp": "^0.4.0"
   },
-  "version": "2.11.0"
+  "version": "2.12.0"
 }
